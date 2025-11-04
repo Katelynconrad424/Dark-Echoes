@@ -1,0 +1,60 @@
+.app {
+  display: flex;
+  background-color: #111;
+  color: white;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 35%;
+  padding: 20px;
+  border-right: 1px solid #333;
+}
+
+.sidebar h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.sidebar h2 {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: #222;
+}
+
+.sidebar li.active {
+  background-color: #444;
+}
+
+.details {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.details button {
+  background-color: #eee;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.details button:hover {
+  background-color: #ddd;
+}
