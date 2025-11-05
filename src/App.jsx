@@ -3,35 +3,39 @@ import { episodes } from "./data";
 import "./App.css";
 
 export default function App() {
-  // this remembers which episode you clicked on
   const [selectedEpisode, setSelectedEpisode] = useState(null);
 
-  // when you click an episode name, this will run
-  function handleClick(episode) {
-    setSelectedEpisode(episode);
+  function handleClick(ep) {
+    setSelectedEpisode(ep);
   }
 
   return (
     <div className="app">
-      {/* Left side with episode names */}
       <div className="sidebar">
         <h1>Dark Echoes</h1>
         <h2>Episodes</h2>
 
         <ul>
-          {episodes.map((ep) => (
-            <li
-              key={ep.id}
-              onClick={() => handleClick(ep)} // when clicked, show details
-              className={selectedEpisode?.id === ep.id ? "active" : ""}
-            >
-              {ep.name}
-            </li>
-          ))}
+          {episodes.map((ep) => {
+            // check if this episode is the one the user clicked
+            let isActive = false;
+            if (selectedEpisode && selectedEpisode.id === ep.id) {
+              isActive = true;
+            }
+
+            return (
+              <li
+                key={ep.id}
+                onClick={() => handleClick(ep)}
+                className={isActive ? "active" : ""}
+              >
+                {ep.name}
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      {/* Right side with episode details */}
       <div className="details">
         {selectedEpisode ? (
           <div>
@@ -41,7 +45,7 @@ export default function App() {
             <button>Watch now</button>
           </div>
         ) : (
-          <p>Please select an episode to see more details.</p>
+          <p>Please click an episode to see details.</p>
         )}
       </div>
     </div>

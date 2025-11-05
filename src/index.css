@@ -1,60 +1,84 @@
-.app {
-  display: flex;
-  background-color: #111;
-  color: white;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+/* remove space and make everything fit nicely */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.app {
+  display: flex;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+/* sidebar on the left */
 .sidebar {
-  width: 35%;
+  width: 250px;
+  background-color: #222;
+  color: white;
   padding: 20px;
-  border-right: 1px solid #333;
 }
 
 .sidebar h1 {
-  font-size: 2em;
+  color: gold;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .sidebar h2 {
-  font-size: 1.2em;
-  color: #ccc;
-  margin-bottom: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
 }
 
 .sidebar li {
   padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .sidebar li:hover {
-  background-color: #222;
+  background-color: #333;
 }
 
 .sidebar li.active {
-  background-color: #444;
+  background-color: gold;
+  color: black;
 }
 
+/* details section on the right */
 .details {
-  flex-grow: 1;
-  padding: 40px;
+  flex: 1;
+  padding: 30px;
+  background-color: #f3f3f3;
+}
+
+.details h2 {
+  font-size: 24px;
+}
+
+.details h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.details p {
+  margin-top: 15px;
+  line-height: 1.4;
 }
 
 .details button {
-  background-color: #eee;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
   margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: gold;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .details button:hover {
-  background-color: #ddd;
+  background-color: orange;
 }
